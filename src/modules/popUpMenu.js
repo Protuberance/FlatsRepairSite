@@ -2,7 +2,8 @@ const popUpMenu = () => {
 
     const popUpDialogMenu = document.querySelector('.popup-dialog-menu'),
         menuIcon = document.querySelector('.menu__icon'),
-        buttonFooter = document.querySelector('.button-footer a');
+        buttonFooter = document.querySelector('.button-footer a'),
+        popupRepairTypes = document.querySelector('.popup-repair-types');
 
     let isMobile = false;
 
@@ -35,6 +36,10 @@ const popUpMenu = () => {
         else if (event.target.closest('.popup-menu-nav__item')) {
             scrollTo(event);
             closeMenu();
+        }
+        else if (event.target.closest('.link-list')) {
+            closeMenu();
+            popupRepairTypes.style.cssText = `visibility: visible;`;
         }
     };
 
