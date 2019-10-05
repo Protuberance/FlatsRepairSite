@@ -9,10 +9,12 @@ import 'nodelist-foreach-polyfill';
 
 import phoneList from './modules/phoneList';
 import popUpMenu from './modules/popUpMenu';
-import popupRepairTypes from './modules/popupRepairTypes'
+import popupRepairTypes from './modules/popupRepairTypes';
 import phoneMask from './modules/phoneMask';
+import popupPrivacy from './modules/popupPrivacy';
 
 phoneList();
 popUpMenu();
 popupRepairTypes();
 phoneMask();
+popupPrivacy();
