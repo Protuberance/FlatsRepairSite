@@ -1,7 +1,8 @@
 const popUpMenu = () => {
 
     const popUpDialogMenu = document.querySelector('.popup-dialog-menu'),
-        menuIcon = document.querySelector('.menu__icon');
+        menuIcon = document.querySelector('.menu__icon'),
+        buttonFooter = document.querySelector('.button-footer a');
 
     let isMobile = false;
 
@@ -44,31 +45,29 @@ const popUpMenu = () => {
 
         if (eventTargetTag.toLowerCase() === 'a') {
             scrollToElementName = event.target.getAttribute('href');
-        } else if (eventTargetTag.toLowerCase() === 'li') {
-            scrollToElementName = event.target.querySelector('a').getAttribute('href');
-        } else if (eventTargetTag.toLowerCase() === 'img') {
-            scrollToElementName = event.target.parentElement.getAttribute('href');
         }
         scrollToElementName = scrollToElementName.substring(1);
 
         let scrollToElement = document.getElementById(scrollToElementName),
             scrollToTopValue = scrollToElement.offsetTop,
             indexScrollAnimation,
-            currentScrollTop = document.documentElement.scrollTop;
+            currentScrollTop = document.documentElement.scrollTop,
+            downDirection = currentScrollTop < scrollToTopValue ? true : false;
 
         function scrollAnimation() {
             indexScrollAnimation = requestAnimationFrame(scrollAnimation);
             document.documentElement.scrollTop = currentScrollTop;
-            if (currentScrollTop >= scrollToTopValue) {
+            if ((currentScrollTop >= scrollToTopValue && downDirection) || (currentScrollTop <= scrollToTopValue && !downDirection)) {
                 cancelAnimationFrame(indexScrollAnimation);
                 document.documentElement.scrollTop = scrollToTopValue;
             }
-            currentScrollTop += 100;
+            currentScrollTop = downDirection ? currentScrollTop + 100 : currentScrollTop - 100;
         }
         indexScrollAnimation = requestAnimationFrame(scrollAnimation);
     };
     menuIcon.addEventListener('click', openMenu);
     popUpDialogMenu.addEventListener('click', popUpDialogMenuHandler);
+    buttonFooter.addEventListener('click', scrollTo);
 };
 
 export default popUpMenu;
