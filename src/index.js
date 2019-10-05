@@ -8,5 +8,7 @@ import 'formdata-polyfill';
 import 'nodelist-foreach-polyfill';
 
 import phoneList from './modules/phoneList';
+import popUpMenu from './modules/popUpMenu';
 
 phoneList();
+popUpMenu();
