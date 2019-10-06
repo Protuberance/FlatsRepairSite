@@ -14,6 +14,7 @@ import phoneMask from './modules/phoneMask';
 import popupPrivacy from './modules/popupPrivacy';
 import formula from './modules/formula';
 import repareTypes from './modules/repairTypes';
+import portfolio from './modules/portfolio';
 
 phoneList();
 popUpMenu();
@@ -22,3 +23,4 @@ phoneMask();
 popupPrivacy();
 formula();
 repareTypes();
+portfolio();
