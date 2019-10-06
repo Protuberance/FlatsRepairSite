@@ -12,9 +12,11 @@ import popUpMenu from './modules/popUpMenu';
 import popupRepairTypes from './modules/popupRepairTypes';
 import phoneMask from './modules/phoneMask';
 import popupPrivacy from './modules/popupPrivacy';
+import formula from './modules/formula';
 
 phoneList();
 popUpMenu();
 popupRepairTypes();
 phoneMask();
 popupPrivacy();
+formula();
