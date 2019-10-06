@@ -13,6 +13,7 @@ import popupRepairTypes from './modules/popupRepairTypes';
 import phoneMask from './modules/phoneMask';
 import popupPrivacy from './modules/popupPrivacy';
 import formula from './modules/formula';
+import repareTypes from './modules/repairTypes';
 
 phoneList();
 popUpMenu();
@@ -20,3 +21,4 @@ popupRepairTypes();
 phoneMask();
 popupPrivacy();
 formula();
+repareTypes();
