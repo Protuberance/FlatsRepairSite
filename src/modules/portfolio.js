@@ -107,7 +107,6 @@ const portfolio = () => {
         } else {
             slideOffset = portfolioSlider.children[0].clientWidth;
             let deltaOffset = Math.floor(portfolioSlider.clientWidth / slideOffset);
-            deltaOffset = deltaOffset === 1 ? 0 : deltaOffset;
             maxCount = portfolioSlider.children.length - deltaOffset;
             leftArrow = portfolioArrowLeft;
             rightArrow = portfolioArrowRight;
