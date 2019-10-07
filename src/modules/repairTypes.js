@@ -5,8 +5,8 @@ const repairTypes = () => {
         repairTypesArrowRight = document.getElementById('repair-types-arrow_right'),
         buttonsContainer = document.querySelector('.nav-list-repair'),
         buttons = buttonsContainer.querySelectorAll('button'),
-        sliderCounterContentCurrent = document.querySelector('.slider-counter-content__current'),
-        sliderCounterContentTotal = document.querySelector('.slider-counter-content__total'),
+        sliderCounterContentCurrent = document.querySelector('.repair-types .slider-counter-content__current'),
+        sliderCounterContentTotal = document.querySelector('.repair-types .slider-counter-content__total'),
 
         navArrowRepairLeftBase = document.getElementById('nav-arrow-repair-left_base'),
         navArrowRrepairRightBase = document.getElementById('nav-arrow-repair-right_base'),
