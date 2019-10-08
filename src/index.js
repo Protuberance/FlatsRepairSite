@@ -16,11 +16,13 @@ import formula from './modules/formula';
 import repareTypes from './modules/repairTypes';
 import portfolio from './modules/portfolio';
 
-phoneList();
-popUpMenu();
-popupRepairTypes();
-phoneMask();
-popupPrivacy();
-formula();
-repareTypes();
-portfolio();
+document.addEventListener('DOMContentLoaded', () => {
+    phoneList();
+    popUpMenu();
+    popupRepairTypes();
+    phoneMask();
+    popupPrivacy();
+    formula();
+    repareTypes();
+    portfolio();
+});
