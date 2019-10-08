@@ -50,23 +50,47 @@ const formula = () => {
             style = document.createElement('style');
             style.id = 'formulaCustomSlider-style';
         }
-        style.textContent = `
- .formula-customSliderWrap{
-    overflow:hidden  !important;
-}        
-.formula-customSlider{
-    align-items: flex-start !important;
-    display:flex !important;
-    transition:transform 0.5s !important;
-    will-cahnge: transform !important;
-}
-.formula-customSlider__item{
-    display: flex !important;
-    align-items:center;
-    justify-content: center;
-    flex: 0 0 ${slideWidth}% !important;
-}
-`;
+
+        if (document.documentElement.clientWidth < 575) {
+            let itemWidth = document.querySelector('.formula-slider').clientWidth;
+
+
+            style.textContent = `
+    .formula-customSliderWrap{
+        overflow:hidden  !important;
+    }        
+    .formula-customSlider{
+        transform: translateX(-${itemWidth}px);
+        align-items: flex-start !important;
+        display:flex !important;
+        transition:transform 0.5s !important;
+        will-cahnge: transform !important;
+    }
+    .formula-customSlider__item{
+        display: flex !important;
+        align-items:center;
+        justify-content: center;
+        min-width:${itemWidth}px !important;
+    }`;
+        } else {
+            style.textContent = `
+    .formula-customSliderWrap{
+        overflow:hidden  !important;
+    }        
+    .formula-customSlider{
+        align-items: flex-start !important;
+        display:flex !important;
+        transition:transform 0.5s !important;
+        will-cahnge: transform !important;
+    }
+    .formula-customSlider__item{
+        display: flex !important;
+        align-items:center;
+        justify-content: center;
+        flex: 0 0 ${slideWidth}% !important;
+    }
+    `;
+        }
         document.head.appendChild(style);
     };
 
@@ -93,8 +117,8 @@ const formula = () => {
     const createSlider = () => {
         if (document.documentElement.clientWidth < 1024) {
             slideWidth = 33;
-            addStyles(slideWidth);
             addClasses();
+            addStyles(slideWidth);
             controlSllider();
             backReplaceItems();
         }

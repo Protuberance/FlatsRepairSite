@@ -8889,3 +8889,25 @@ strong {
 .active-item .formula-item-popup-Rotated::before {
     transform: rotateZ(180deg);
 }
+
+.active-item .problems-item__icon-inner {
+    background: -webkit-gradient(linear, left top, right top, from(#F48922), to(#FFB015));
+    background: linear-gradient(90deg, #F48922 0%, #FFB015 100%);
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.active-item .problems-item-popup {
+    visibility: visible;
+    opacity: 1;
+}
+
+.problems-item-popup-Rotated {
+    transform: translateY(5px);
+    padding-top: 35px;
+    top: 155px;
+}
+
+.active-item .problems-item-popup-Rotated::before {
+    transform: rotateZ(180deg);
+}

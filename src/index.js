@@ -16,6 +16,7 @@ import formula from './modules/formula';
 import repareTypes from './modules/repairTypes';
 import portfolio from './modules/portfolio';
 import documents from './modules/documents';
+import problems from './modules/problems';
 
 document.addEventListener('DOMContentLoaded', () => {
     phoneList();
@@ -27,4 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
     repareTypes();
     portfolio();
     documents();
+    problems();
 });
