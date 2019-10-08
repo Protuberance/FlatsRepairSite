@@ -156,6 +156,7 @@ const portfolio = () => {
 
     window.addEventListener('resize', init);
 
+    //#region popupPorfolioSlider
     const popupPortfolio = document.querySelector('.popup-portfolio'),
         popupPortfolioSlider = document.querySelector('.popup-portfolio-slider'),
         popupPortfolioSliderWrap = document.querySelector('.popup-portfolio-slider-wrap'),//position:absolut  !!!
@@ -265,6 +266,7 @@ const portfolio = () => {
         }
     };
     initPicturesSlder();
+    //#endregion
 };
 
 export default portfolio;
