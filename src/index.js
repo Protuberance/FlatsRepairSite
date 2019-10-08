@@ -15,6 +15,7 @@ import popupPrivacy from './modules/popupPrivacy';
 import formula from './modules/formula';
 import repareTypes from './modules/repairTypes';
 import portfolio from './modules/portfolio';
+import documents from './modules/documents';
 
 document.addEventListener('DOMContentLoaded', () => {
     phoneList();
@@ -25,4 +26,5 @@ document.addEventListener('DOMContentLoaded', () => {
     formula();
     repareTypes();
     portfolio();
+    documents();
 });

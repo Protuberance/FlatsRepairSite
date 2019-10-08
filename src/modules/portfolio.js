@@ -19,17 +19,21 @@ const portfolio = () => {
         isMobile;
 
     const addWrap = () => {
-        customWrap = document.createElement('div');
-        customWrap.classList.add('portfolioSliderCustomWrap');
+        let wrap = document.querySelector('.portfolioSliderCustomWrap');
+        if (!wrap) {
 
-        let sliderItems = currentSlider.children;
-        let count = sliderItems.length;
+            customWrap = document.createElement('div');
+            customWrap.classList.add('portfolioSliderCustomWrap');
 
-        for (let index = 0; index < count; index++) {
-            customWrap.appendChild(sliderItems[0]);
+            let sliderItems = currentSlider.children;
+            let count = sliderItems.length;
+
+            for (let index = 0; index < count; index++) {
+                customWrap.appendChild(sliderItems[0]);
+            }
+
+            currentSlider.appendChild(customWrap);
         }
-
-        currentSlider.appendChild(customWrap);
     };
     const addStyles = () => {
         let style = document.getElementById('sliderPortfolio-style');
