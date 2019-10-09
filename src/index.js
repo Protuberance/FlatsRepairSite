@@ -19,6 +19,7 @@ import documents from './modules/documents';
 import problems from './modules/problems';
 import designDecides from './modules/designDecides';
 import consultation from './modules/consultation';
+import reviews from './modules/reviews';
 
 document.addEventListener('DOMContentLoaded', () => {
     phoneList();
@@ -33,4 +34,5 @@ document.addEventListener('DOMContentLoaded', () => {
     problems();
     designDecides();
     consultation();
+    reviews();
 });
