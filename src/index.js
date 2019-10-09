@@ -18,6 +18,7 @@ import portfolio from './modules/portfolio';
 import documents from './modules/documents';
 import problems from './modules/problems';
 import designDecides from './modules/designDecides';
+import consultation from './modules/consultation';
 
 document.addEventListener('DOMContentLoaded', () => {
     phoneList();
@@ -31,4 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
     documents();
     problems();
     designDecides();
+    consultation();
 });
