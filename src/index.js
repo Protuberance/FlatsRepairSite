@@ -22,6 +22,7 @@ import consultation from './modules/consultation';
 import reviews from './modules/reviews';
 import scheme from './modules/scheme';
 import accordion from './modules/accordion';
+import partners from './modules/partners';
 
 document.addEventListener('DOMContentLoaded', () => {
     phoneList();
@@ -39,4 +40,5 @@ document.addEventListener('DOMContentLoaded', () => {
     reviews();
     scheme();
     accordion();
+    partners();
 });

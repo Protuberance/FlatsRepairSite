@@ -1,7 +1,8 @@
-const reviews = () => {
-    const reviewsSlider = document.querySelector('.reviews-slider'),
-        reviewsArrowleft = document.getElementById('reviews-arrow_left'),
-        reviewsArrowRight = document.getElementById('reviews-arrow_right');
+const partners = () => {
+    const reviewsSlider = document.querySelector('.partners-slider'),
+        reviewsArrowleft = document.getElementById('partners-arrow_left'),
+        reviewsArrowRight = document.getElementById('partners-arrow_right'),
+        wrap = document.querySelector('#partners .wrapper');
 
     let slidePOffset,
         currentPPosition,
@@ -9,11 +10,11 @@ const reviews = () => {
         customWrap;
 
     const addWrap = () => {
-        let wrap = document.querySelector('.reviewSliderCustomWrap');
+        let wrap = document.querySelector('.partnersSliderCustomWrap');
         if (!wrap) {
 
             customWrap = document.createElement('div');
-            customWrap.classList.add('reviewSliderCustomWrap');
+            customWrap.classList.add('partnersSliderCustomWrap');
 
             let sliderItems = reviewsSlider.children;
             let count = sliderItems.length;
@@ -26,14 +27,14 @@ const reviews = () => {
         }
     };
     const addStyles = () => {
-        let style = document.getElementById('reviewSliderCustom-style');
+        let style = document.getElementById('partnersSliderCustom-style');
         if (!style) {
             style = document.createElement('style');
-            style.id = 'reviewSliderCustom-style';
+            style.id = 'partnersSliderCustom-style';
         }
 
         style.textContent = `
-            .reviewSliderCustomWrap{
+            .partnersSliderCustomWrap{
             position: relative;
             display: -webkit-box;
             display: -ms-flexbox;
@@ -42,7 +43,7 @@ const reviews = () => {
             height:100%;
             transition:transform 0.5s !important;
         }
-        .reviewSliderItem{
+        .partnersSliderItem{
             min-width: ${slidePOffset}px !important;
         }`;
 
@@ -71,22 +72,28 @@ const reviews = () => {
         }
     };
 
-    const init = () => {
+    const init = (countInScreen) => {
         reviewsArrowleft.addEventListener('click', slideBackP);
         reviewsArrowRight.addEventListener('click', slideForwardP);
         addWrap();
-        slidePOffset = customWrap.clientWidth;
+        slidePOffset = customWrap.clientWidth / countInScreen;
         addStyles();
         reviewsArrowleft.style.display = 'none';
 
         for (let index = 0; index < customWrap.children.length; index++) {
-            customWrap.children[index].classList.add('reviewSliderItem');
+            customWrap.children[index].classList.add('partnersSliderItem');
         }
         currentPPosition = 0;
-        slidePCount = customWrap.children.length;
+        slidePCount = customWrap.children.length - (countInScreen - 1);
+        wrap.style.cssText = 'overflow: hidden;';
     };
-    init();
+    console.log('Hi');
+    if (document.documentElement.clientWidth < 525) {
+        init(1);
+    } else {
+        init(3);
+    }
 
 };
 
-export default reviews;
+export default partners;
