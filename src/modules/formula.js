@@ -18,15 +18,15 @@ const formula = () => {
         if (!item.parentNode.classList.contains('active-item')) {
             item.parentNode.classList.add('active-item');
 
-
             if (popUp.getBoundingClientRect().top < 0) {
-
                 popUp.classList.add('formula-item-popup-Rotated');
+                item.closest('.row').style.cssText = 'z-index:1';
             }
         }
         else {
             item.parentNode.classList.remove('active-item');
             popUp.classList.remove('formula-item-popup-Rotated');
+            item.closest('.row').style.cssText = '';
         }
 
     };
@@ -98,7 +98,6 @@ const formula = () => {
         next.addEventListener('click', forwardReplaceItems);
         prev.addEventListener('click', backReplaceItems);
     };
-
 
     const backReplaceItems = () => {
         formulaSliderItems[1].classList.remove('active-item');
