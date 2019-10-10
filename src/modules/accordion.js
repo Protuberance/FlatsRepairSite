@@ -5,7 +5,7 @@ const accordion = () => {
     const containerClickHandler = (event) => {
         buttons.forEach((element) => {
             if (element === event.target) {
-                element.classList.add('msg-active');
+                element.classList.toggle('msg-active');
             } else {
                 element.classList.remove('msg-active');
             }
