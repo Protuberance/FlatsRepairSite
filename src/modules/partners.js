@@ -87,7 +87,6 @@ const partners = () => {
         slidePCount = customWrap.children.length - (countInScreen - 1);
         wrap.style.cssText = 'overflow: hidden;';
     };
-    console.log('Hi');
     if (document.documentElement.clientWidth < 525) {
         init(1);
     } else {

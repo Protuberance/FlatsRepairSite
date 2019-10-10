@@ -23,6 +23,7 @@ import reviews from './modules/reviews';
 import scheme from './modules/scheme';
 import accordion from './modules/accordion';
 import partners from './modules/partners';
+import sendForm from './modules/sendForm';
 
 document.addEventListener('DOMContentLoaded', () => {
     phoneList();
@@ -41,4 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
     scheme();
     accordion();
     partners();
+    sendForm();
 });
