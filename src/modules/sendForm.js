@@ -10,6 +10,9 @@ const sendForm = () => {
     const formHandler = (event) => {
         event.preventDefault();
 
+        let checkBox = event.target.querySelector('input[type=checkbox]');
+        if (checkBox.checked !== true)
+            return;
 
         const formData = new FormData(event.target);
         let body = {};
