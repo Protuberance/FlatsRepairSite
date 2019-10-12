@@ -45,6 +45,9 @@ const partners = () => {
         }
         .partnersSliderItem{
             min-width: ${slidePOffset}px !important;
+        }
+        .partnersSliderItem svg{
+            width:57%;
         }`;
 
         document.head.appendChild(style);
